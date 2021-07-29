@@ -18,6 +18,9 @@ export class Book{
 
   @Column()
   author: string; 
+
+  @Column()
+  userId: string;
   
   @ManyToOne(() => User, user => user.books)
   user: User;

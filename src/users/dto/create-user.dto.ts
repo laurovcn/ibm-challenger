@@ -8,4 +8,12 @@ export class CreateUserDto {
   @ApiProperty()  
   lastname: string;
  
+  @ApiProperty() 
+  books: [{
+    snb: string,
+    name: string,
+    description: string,
+    author: string,
+    userId: string,
+  }] 
 }
