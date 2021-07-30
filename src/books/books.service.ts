@@ -21,17 +21,16 @@ export class BooksService {
     return this.booksRepository.save(createBookDto);
   }
 
-  async findAll(options: IPaginationOptions): Promise<Pagination<Book>>  {
+  findAll(options: IPaginationOptions): Promise<Pagination<Book>>  {
     return paginate<Book>(this.booksRepository, options);
   }
 
-  findOne(userId: number) {
-    return this.booksRepository.findOne({userId});
+  findOne(id: number) {
+    return this.booksRepository.findOne({id});
   } 
 
-  async update(id: number, updateBookDto: UpdateBookDto) {
-    await this.booksRepository.findOne({id});
-    return await this.booksRepository.update(id, updateBookDto);
+  update(id: number, updateBookDto: UpdateBookDto) {   
+    return this.booksRepository.update(id, updateBookDto);
   }
 
   remove(id: number) {

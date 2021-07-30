@@ -58,4 +58,11 @@ then access localhost:8080
 You can acess localhost:3001/api and enjoy (: 
 ```
 
+## Todo 
+```
+RF - Como usuário gostaria de ver a listagem (apenas os nomes) de livros que eu tenho em estoque de forma paginada;
+
+RNF - Testes unitários
+```
+
 

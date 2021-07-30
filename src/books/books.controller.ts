@@ -15,7 +15,7 @@ export class BooksController {
   }
 
   @Get()
-  async findAll( 
+  findAll( 
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10,
   ): Promise<Pagination<Book>> {
@@ -27,9 +27,9 @@ export class BooksController {
     });
   }
 
-  @Get(':userId')
-  findOne(@Param('userId') userId: string) {
-    return this.booksService.findOne(+userId);
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.booksService.findOne(+id);
   }
 
   @Patch(':id')

@@ -14,7 +14,7 @@ export class User{
   lastname: string; 
 
   @OneToMany(() => Book, book => book.user, {
-    cascade:true, eager: true,  nullable: false
+    cascade:true, eager: true
   })
     books: Book[];  
 }
