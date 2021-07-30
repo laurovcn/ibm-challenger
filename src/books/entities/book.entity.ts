@@ -22,7 +22,7 @@ export class Book{
   @Column()
   userId: number;
   
-  @ManyToOne(() => User, user => user.books)
+  @ManyToOne(() => User, user => user.books,  { onDelete: "CASCADE" })
   user: User;
   
 }
