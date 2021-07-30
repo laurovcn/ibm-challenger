@@ -29,20 +29,20 @@
 ## Installation
 
 ```bash
-$ npm install
+$ yarn 
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn run start
 
 # watch mode
-$ npm run start:dev
+$ yarn run start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn run start:prod
 
 $ Your api is running at port 3001
 ```
@@ -60,9 +60,9 @@ You can acess localhost:3001/api and enjoy (:
 
 ## Todo 
 ```
-RF - Como usuário gostaria de ver a listagem (apenas os nomes) de livros que eu tenho em estoque de forma paginada;
+RF - As a user I would like to see the listing (names only) of books I have in stock in paginated form
 
-RNF - Testes unitários
+RNF - Unitary tests
 ```
 
 
