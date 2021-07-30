@@ -14,6 +14,6 @@ export class CreateUserDto {
     name: string,
     description: string,
     author: string,
-    userId: string,
+    userId: number,
   }] 
 }

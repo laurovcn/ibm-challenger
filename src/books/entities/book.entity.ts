@@ -7,7 +7,7 @@ export class Book{
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ update: false })
   snb: string; 
 
   @Column()
@@ -20,7 +20,7 @@ export class Book{
   author: string; 
 
   @Column()
-  userId: string;
+  userId: number;
   
   @ManyToOne(() => User, user => user.books)
   user: User;

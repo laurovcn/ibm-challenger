@@ -15,6 +15,6 @@ export class CreateBookDto {
   author: string; 
 
   @ApiProperty() 
-  userId: string; 
+  userId: number; 
 
 }
