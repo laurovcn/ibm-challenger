@@ -28,7 +28,7 @@ export class BooksController {
 
   @Get('filter')
   async findWithFilter( 
-    @Query('userId', new DefaultValuePipe(1), ParseIntPipe) userId: number,
+    @Query('userId', new DefaultValuePipe(1), ParseIntPipe) userId: number = 1,
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10,
   ): Promise<Pagination<Book>> {    
