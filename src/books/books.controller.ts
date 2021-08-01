@@ -15,16 +15,28 @@ export class BooksController {
   }
 
   @Get()
-  findAll( 
+  async findAll(     
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10,
-  ): Promise<Pagination<Book>> {
-    limit = limit > 100 ? 100 : limit;   
-    return this.booksService.findAll({    
+  ): Promise<Pagination<Book>> {    
+    return this.booksService.findAll({  
       page,
       limit,
       route: 'http://localhost/books/paginate',
     });
+  }
+
+  @Get('filter')
+  async findWithFilter( 
+    @Query('userId', new DefaultValuePipe(1), ParseIntPipe) userId: number,
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number = 10,
+  ): Promise<Pagination<Book>> {    
+    return this.booksService.findByUserId({  
+      page,
+      limit,
+      route: 'http://localhost/books/paginate',
+    }, userId);
   }
 
   @Get(':id')

@@ -60,8 +60,6 @@ You can acess localhost:3001/api and enjoy (:
 
 ## Todo 
 ```
-RF - As a user I would like to see the listing (names only) of books I have in stock in paginated form
-
 RNF - Unitary tests
 ```
 

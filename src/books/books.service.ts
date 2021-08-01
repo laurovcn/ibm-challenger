@@ -21,8 +21,14 @@ export class BooksService {
     return this.booksRepository.save(createBookDto);
   }
 
-  findAll(options: IPaginationOptions): Promise<Pagination<Book>>  {
+  findAll(options: IPaginationOptions): Promise<Pagination<Book>> {  
     return paginate<Book>(this.booksRepository, options);
+  }
+
+  findByUserId(options: IPaginationOptions, userId: number): Promise<Pagination<Book>> {  
+    return paginate<Book>(this.booksRepository, options, {
+      where: { userId }, select: ['name']
+    });
   }
 
   findOne(id: number) {
